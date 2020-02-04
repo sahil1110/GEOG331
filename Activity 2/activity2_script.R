@@ -346,6 +346,86 @@ hist(datW$PRCP[datW$siteN == 1],
 prcp_year<- aggregate(datW$PRCP, by=list(as.factor(datW$year)), FUN="sum", na.rm=T)
 prcp_site<- aggregate(datW$PRCP, by=list(datW$NAME), FUN="sum", na.rm=T)
 
+prcp_site1<- aggregate(datW$PRCP[datW$siteN==1], by=list(subset(datW, datW$siteN==1)$year), 
+                       FUN="sum", na.rm=T)
+prcp_site2<- aggregate(datW$PRCP[datW$siteN==2], by=list(subset(datW, datW$siteN==2)$year), 
+                       FUN="sum", na.rm=T)
+prcp_site3<- aggregate(datW$PRCP[datW$siteN==3], by=list(subset(datW, datW$siteN==3)$year), 
+                       FUN="sum", na.rm=T)
+prcp_site4<- aggregate(datW$PRCP[datW$siteN==4], by=list(subset(datW, datW$siteN==4)$year), 
+                       FUN="sum", na.rm=T)
+prcp_site5<- aggregate(datW$PRCP[datW$siteN==5], by=list(subset(datW, datW$siteN==5)$year), 
+                       FUN="sum", na.rm=T)
+
+#Histogram for ABERDEEN, WA US
+
+h11<-hist(prcp_site1$x,
+     freq=FALSE, 
+     main = paste(levels(datW$NAME)[1]),
+     xlab = "Annual precipitation (in inches)", 
+     ylab="Relative frequency",
+     col="grey50",
+     border="white") # roughly normally distributed
+
+#add mean line with red (tomato3) color
+#and thickness of 3
+abline(v = mean(prcp_site1$x,na.rm=TRUE), 
+       col = "tomato3",
+       lwd = 3)
+#add standard deviation line below the mean with red (tomato3) color
+#and thickness of 3
+abline(v = mean(prcp_site1$x,na.rm=TRUE) - sd(prcp_site1$x,na.rm=TRUE), 
+       col = "tomato3", 
+       lty = 3,
+       lwd = 3)
+#add standard deviation line above the mean with red (tomato3) color
+#and thickness of 3
+abline(v = mean(prcp_site1$x,na.rm=TRUE) + sd(prcp_site1$x,na.rm=TRUE), 
+       col = "tomato3", 
+       lty = 3,
+       lwd = 3)
+
+x.plot <- seq(1000,3000, length.out = 500)
+#the dnorm function will produce the probability density based on a mean and standard deviation.
+
+y.plot <-  dnorm(seq(1000,3000, length.out = 500),
+                 mean(prcp_site1$x,na.rm=TRUE),
+                 sd(prcp_site1$x,na.rm=TRUE))
+
+#create a density that is scaled to fit in the plot since the density has a different range from the data density.
+#!!! this is helpful for putting multiple things on the same plot
+#!!! It might seem confusing at first. It means the maximum value of the plot is always the same between the two
+# datasets on the plot. Here both plots share zero as a minimum.
+
+y.scaled <- (max(h11$density)/max(y.plot)) * y.plot
+
+#points function adds points or lines to a graph
+#the first two arguments are the x coordinates and the y coordinates.
+
+points(x.plot,
+       y.scaled, 
+       type = "l", 
+       col = "royalblue3",
+       lwd = 4, 
+       lty = 2)
+
 # Anything more for Q8?
 
-## 
+## Question 9
+
+meanprcp_site1<- mean(prcp_site1$x)
+meanprcp_site2<- mean(prcp_site2$x)
+meanprcp_site3<- mean(prcp_site3$x)
+meanprcp_site4<- mean(prcp_site4$x)
+meanprcp_site5<- mean(prcp_site5$x)
+
+mean_annual_prcp<- data.frame()
+mean_annual_prcp<- cbind("Number"= 1:5, "Name"= levels(datW$NAME),
+                "Annual precipitation mean"= c(meanprcp_site1, meanprcp_site2, meanprcp_site3,
+                                               meanprcp_site4, meanprcp_site5))
+
+mean_annual_prcp<- as.data.frame(mean_annual_prcp)
+mean_annual_prcp$`Annual precipitation mean`<- as.numeric(as.character
+                                (mean_annual_prcp$`Annual precipitation mean`))
+
+# 
