@@ -328,3 +328,24 @@ extreme<- qnorm(0.95, mean(datW$TAVE[datW$siteN==1], na.rm=T), sd(datW$TAVE[datW
 1-pnorm(extreme, mean(datW$TAVE[datW$siteN==1], na.rm=T)+4, sd(datW$TAVE[datW$siteN==1], na.rm=T))
 # We will expect to observe temperatures greater than the current threshold for extreme high temperatures (18.51026)
 # 20.31%
+
+## Question 7
+dev.off()
+plot.new()
+hist(datW$PRCP[datW$siteN == 1],
+     freq=FALSE, 
+     main = paste(levels(datW$NAME)[1]),
+     xlab = "Daily Precipitation (Inches)", 
+     ylab="Relative frequency",
+     col="grey50",
+     border="white") # Exponential distribution?
+                     # Shorten x-axis range
+
+## Question 8
+
+prcp_year<- aggregate(datW$PRCP, by=list(as.factor(datW$year)), FUN="sum", na.rm=T)
+prcp_site<- aggregate(datW$PRCP, by=list(datW$NAME), FUN="sum", na.rm=T)
+
+# Anything more for Q8?
+
+## 
