@@ -322,3 +322,9 @@ points(x.plot,
        col = "royalblue3",
        lwd = 4, 
        lty = 2)
+
+## Question 6
+extreme<- qnorm(0.95, mean(datW$TAVE[datW$siteN==1], na.rm=T), sd(datW$TAVE[datW$siteN==1], na.rm=T))
+1-pnorm(extreme, mean(datW$TAVE[datW$siteN==1], na.rm=T)+4, sd(datW$TAVE[datW$siteN==1], na.rm=T))
+# We will expect to observe temperatures greater than the current threshold for extreme high temperatures (18.51026)
+# 20.31%
