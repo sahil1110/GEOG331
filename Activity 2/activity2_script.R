@@ -1,23 +1,10 @@
-heights<- c(30, 41, 20, 22)
-heights_cm<- heights*100
-heights_cm
+######Activity 2#######
 
-heights[1]
-heights[2:3]
+## Question 1
 
-Mat<- matrix(c(1,2,3,4,5,6), ncol=2, byrow=T)
-Mat
-
-Mat.bycol<-matrix(c(1,2,3,4,5,6), ncol=2)
-Mat.bycol
-
-Mat.bycol[1,2]
-Mat.bycol[1,]
-Mat.bycol[,1]
-
-datW<- read.csv("Y:\\Students\\slalwani\\a02\\2011124.csv")
+datW <- read.csv("y:\\Students\\slalwani\\a02\\2011124.csv")
 nrow(datW)
-ncol(datW)
+ncol(datW) # Initially, there are 157849 rows and 9 columns
 
 #specify a column with a proper date format
 #note the format here dataframe$column
@@ -64,12 +51,12 @@ par(mfrow= c(2,2))
 #Here you want to paste the actual name of the factor not the numeric index
 #since that will be more meaningful. 
 h1<-hist(datW$TAVE[datW$siteN == 1],
-     freq=FALSE, 
-     main = paste(levels(datW$NAME)[1]),
-     xlab = "Average daily temperature (degrees C)", 
-     ylab="Relative frequency",
-     col="grey50",
-     border="white")
+         freq=FALSE, 
+         main = paste(levels(datW$NAME)[1]),
+         xlab = "Average daily temperature (degrees C)", 
+         ylab="Relative frequency",
+         col="grey50",
+         border="white")
 #add mean line with red (tomato3) color
 #and thickness of 3
 abline(v = mean(datW$TAVE[datW$siteN == 1],na.rm=TRUE), 
@@ -95,12 +82,12 @@ abline(v = mean(datW$TAVE[datW$siteN == 1],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
 #Here you want to paste the actual name of the factor not the numeric index
 #since that will be more meaningful. 
 h2<-hist(datW$TAVE[datW$siteN == 2],
-     freq=FALSE, 
-     main = paste(levels(datW$NAME)[2]),
-     xlab = "Average daily temperature (degrees C)", 
-     ylab="Relative frequency",
-     col="black",
-     border="white")
+         freq=FALSE, 
+         main = paste(levels(datW$NAME)[2]),
+         xlab = "Average daily temperature (degrees C)", 
+         ylab="Relative frequency",
+         col="black",
+         border="white")
 #add mean line with red (tomato3) color
 #and thickness of 3
 abline(v = mean(datW$TAVE[datW$siteN == 2],na.rm=TRUE), 
@@ -126,12 +113,12 @@ abline(v = mean(datW$TAVE[datW$siteN == 2],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
 #Here you want to paste the actual name of the factor not the numeric index
 #since that will be more meaningful. 
 h3<-hist(datW$TAVE[datW$siteN == 3],
-     freq=FALSE, 
-     main = paste(levels(datW$NAME)[3]),
-     xlab = "Average daily temperature (degrees C)", 
-     ylab="Relative frequency",
-     col="blue",
-     border="white")
+         freq=FALSE, 
+         main = paste(levels(datW$NAME)[3]),
+         xlab = "Average daily temperature (degrees C)", 
+         ylab="Relative frequency",
+         col="royalblue1",
+         border="white")
 #add mean line with red (tomato3) color
 #and thickness of 3
 abline(v = mean(datW$TAVE[datW$siteN == 3],na.rm=TRUE), 
@@ -157,12 +144,12 @@ abline(v = mean(datW$TAVE[datW$siteN == 3],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
 #Here you want to paste the actual name of the factor not the numeric index
 #since that will be more meaningful. 
 h4<-hist(datW$TAVE[datW$siteN == 4],
-     freq=FALSE, 
-     main = paste(levels(datW$NAME)[4]),
-     xlab = "Average daily temperature (degrees C)", 
-     ylab="Relative frequency",
-     col="lightgray",
-     border="white")
+         freq=FALSE, 
+         main = paste(levels(datW$NAME)[4]),
+         xlab = "Average daily temperature (degrees C)", 
+         ylab="Relative frequency",
+         col="lightgray",
+         border="white")
 #add mean line with red (tomato3) color
 #and thickness of 3
 abline(v = mean(datW$TAVE[datW$siteN == 4],na.rm=TRUE), 
@@ -339,7 +326,7 @@ hist(datW$PRCP[datW$siteN == 1],
      ylab="Relative frequency",
      col="grey50",
      border="white") # Exponential distribution?
-                     # Shorten x-axis range
+# Shorten x-axis range
 
 ## Question 8
 
@@ -359,7 +346,7 @@ prcp_site5<- aggregate(datW$PRCP[datW$siteN==5], by=list(subset(datW, datW$siteN
 
 #Histogram for ABERDEEN, WA US
 
-h11<-hist(prcp_site1$x,
+hist(prcp_site1$x,
      freq=FALSE, 
      main = paste(levels(datW$NAME)[1]),
      xlab = "Annual precipitation (in inches)", 
@@ -421,11 +408,18 @@ meanprcp_site5<- mean(prcp_site5$x)
 
 mean_annual_prcp<- data.frame()
 mean_annual_prcp<- cbind("Number"= 1:5, "Name"= levels(datW$NAME),
-                "Annual precipitation mean"= c(meanprcp_site1, meanprcp_site2, meanprcp_site3,
-                                               meanprcp_site4, meanprcp_site5))
+                         "Annual precipitation mean"= c(meanprcp_site1, meanprcp_site2, meanprcp_site3,
+                                                        meanprcp_site4, meanprcp_site5))
 
 mean_annual_prcp<- as.data.frame(mean_annual_prcp)
 mean_annual_prcp$`Annual precipitation mean`<- as.numeric(as.character
-                                (mean_annual_prcp$`Annual precipitation mean`))
+                                                          (mean_annual_prcp$`Annual precipitation mean`))
 
-# 
+## Checking rows and columns of data frame datW at the end of the Activity 2 and our analysis ##
+
+nrow(datW)
+ncol(datW)
+
+# The dataset still contains 157849 rows but now has 13 columns
+
+################End of Activity 2#####################
