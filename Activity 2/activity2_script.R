@@ -206,6 +206,10 @@ abline(v = mean(datW$TAVE[datW$siteN == 4],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
        lty = 3,
        lwd = 3)
 
+## Question 3
+
+help("hist")
+help("paste")
 
 ## Question 5
 # the seq function generates a sequence of numbers that we can use to plot the normal across the range of temperature
