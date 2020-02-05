@@ -428,7 +428,7 @@ prcp_site5<- aggregate(datW$PRCP[datW$siteN==5], by=list(subset(datW, datW$siteN
 # distribution of data
 # Also overlayed a normal distribution curve to assess how well normal distribution models the data
 
-hist(prcp_site1$x, # Use data on total precipitation for each year for Aberdeen, WA US
+h11<-hist(prcp_site1$x, # Use data on total precipitation for each year for Aberdeen, WA US
      freq=FALSE, 
      main = paste(levels(datW$NAME)[1]),
      xlab = "Annual precipitation (in mm)", 
@@ -496,14 +496,25 @@ meanprcp_site4<- mean(prcp_site4$x)
 meanprcp_site5<- mean(prcp_site5$x)
 # Mean annual precipitation for Morrisville 6 SW
 
+
+## Create a data farme containing mean of the annual precipitation for all sites
+## Contains the following columns:
+
+## Number: Serial number
+## Name: Name of Site
+## Annual precipitation mean
+
 mean_annual_prcp<- data.frame()
 mean_annual_prcp<- cbind("Number"= 1:5, "Name"= levels(datW$NAME),
                          "Annual precipitation mean"= c(meanprcp_site1, meanprcp_site2, meanprcp_site3,
                                                         meanprcp_site4, meanprcp_site5))
 
 mean_annual_prcp<- as.data.frame(mean_annual_prcp)
+
+# Change annual precipitation mean vector to a numeric type vector
 mean_annual_prcp$`Annual precipitation mean`<- as.numeric(as.character
                                                           (mean_annual_prcp$`Annual precipitation mean`))
+
 
 ## Checking rows and columns of data frame datW at the end of the Activity 2 and our analysis ##
 
