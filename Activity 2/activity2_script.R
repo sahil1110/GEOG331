@@ -6,6 +6,9 @@ datW <- read.csv("y:\\Students\\slalwani\\a02\\2011124.csv")
 nrow(datW)
 ncol(datW) # Initially, there are 157849 rows and 9 columns
 
+## Add dateF column containing the proper date format and a date column that includes only years as numeric data
+## to our dataset datW
+
 #specify a column with a proper date format
 #note the format here dataframe$column
 datW$dateF <- as.Date(datW$DATE, "%Y-%m-%d")
@@ -14,6 +17,32 @@ datW$dateF <- as.Date(datW$DATE, "%Y-%m-%d")
 #create a date column by reformatting the date to only include years
 #and indicating that it should be treated as numeric data
 datW$year <- as.numeric(format(datW$dateF,"%Y"))
+
+## Question 2
+
+#Below I create an example vector of the following data types:
+#character, numeric, integer, factor
+
+#?class: Determines what "type" an object is from the point of view of object-oriented programming.
+#        In other words, a property of an object that determines how generic objects operate with it
+
+char_ex<- c("Marry", "has", "2", "little", "lambs")
+class(char_ex) #char_ex is an example vector of character data type
+
+num_ex<- c(1,2,3.4, 4.32, 0)
+class(num_ex) #num_ex is an example of numeric data type
+
+int_ex<- c(1L,2L,-3L,-4L,6L)
+class(int_ex) #int_ex is an example of integer data type
+
+subs<- c("Math", "English", "Greek", "History", "Geography")
+fact_ex<- factor(subs)
+class(fact_ex)#fact_ex is an example of factor data type
+
+##Data explorationm cleaning and visualization##
+
+# In this section, we add two more columns to the dataset datW while exploring descriptive statistics
+# and histograms in R
 
 #find out all unique site names
 levels(datW$NAME)
@@ -43,9 +72,17 @@ averageTemp
 #you will have to reference the level output or look at the row of data to see the character designation.
 datW$siteN <- as.numeric(datW$NAME)
 
-## Question 4
+## Question 4 (Question 3 after Question 4)
 
+# use par as a tool to combine multiple plots into one overall graph
+# In our case, creates a 2x2 matrix that combines our four histograms in 1 window
+# IMP: par(mfrow()) fills plots into the matrix by row 
 par(mfrow= c(2,2))
+
+#Below, we create histograms for daily temperatures for four sites
+
+## Site 1: Aberdeen, WA US
+
 #make a histogram for the first site in our levels, Aberdeen
 #main= is the title name argument.
 #Here you want to paste the actual name of the factor not the numeric index
@@ -53,10 +90,11 @@ par(mfrow= c(2,2))
 h1<-hist(datW$TAVE[datW$siteN == 1],
          freq=FALSE, 
          main = paste(levels(datW$NAME)[1]),
-         xlab = "Average daily temperature (degrees C)", 
-         ylab="Relative frequency",
-         col="grey50",
+         xlab = "Average daily temperature (degrees C)", # X axis title 
+         ylab="Relative frequency", # Y axis title
+         col="grey50", # assign color for histogram bars
          border="white")
+
 #add mean line with red (tomato3) color
 #and thickness of 3
 abline(v = mean(datW$TAVE[datW$siteN == 1],na.rm=TRUE), 
@@ -66,7 +104,7 @@ abline(v = mean(datW$TAVE[datW$siteN == 1],na.rm=TRUE),
 #and thickness of 3
 abline(v = mean(datW$TAVE[datW$siteN == 1],na.rm=TRUE) - sd(datW$TAVE[datW$siteN == 1],na.rm=TRUE), 
        col = "tomato3", 
-       lty = 3,
+       lty = 3, #dotted line type
        lwd = 3)
 #add standard deviation line above the mean with red (tomato3) color
 #and thickness of 3
@@ -75,7 +113,7 @@ abline(v = mean(datW$TAVE[datW$siteN == 1],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
        lty = 3,
        lwd = 3)
 
-## Site 2
+## Site 2: Livermore, CA US
 
 #make a histogram for the second site in our levels, Livermore
 #main= is the title name argument.
@@ -86,7 +124,7 @@ h2<-hist(datW$TAVE[datW$siteN == 2],
          main = paste(levels(datW$NAME)[2]),
          xlab = "Average daily temperature (degrees C)", 
          ylab="Relative frequency",
-         col="black",
+         col="deepskyblue1",
          border="white")
 #add mean line with red (tomato3) color
 #and thickness of 3
@@ -106,7 +144,7 @@ abline(v = mean(datW$TAVE[datW$siteN == 2],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
        lty = 3,
        lwd = 3)
 
-## Site 3
+## Site 3: Mandan Experiment Station, ND US
 
 #make a histogram for the third site in our levels, Mandan Experiment Station
 #main= is the title name argument.
@@ -137,7 +175,7 @@ abline(v = mean(datW$TAVE[datW$siteN == 3],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
        lty = 3,
        lwd = 3)
 
-## Site 4
+## Site 4: Mormon Flat, AZ US
 
 #make a histogram for the second site in our levels, Mormon Flat
 #main= is the title name argument.
@@ -173,8 +211,14 @@ abline(v = mean(datW$TAVE[datW$siteN == 4],na.rm=TRUE) + sd(datW$TAVE[datW$siteN
 # the seq function generates a sequence of numbers that we can use to plot the normal across the range of temperature
 # values
 
-dev.off()
+dev.off() # used to reset the window from the 2*2 matrix created by par(mfrow())
 par(mfrow=c(2,2))
+
+# Creating histograms from question 4 with blue dashed line for normal distribution overlayed
+# Note that the normal distribution is estimated separately for each site using the mean and 
+# standard deviation of data for each site
+
+## Site 1: Aberdeen, WA US
 
 h1<-hist(datW$TAVE[datW$siteN == 1],
          freq=FALSE, 
@@ -208,7 +252,7 @@ points(x.plot,
        lwd = 4, 
        lty = 2)
 
-## Site 2
+## Site 2: Livermore, CA US
 
 h2<-hist(datW$TAVE[datW$siteN == 2],
          freq=FALSE, 
@@ -242,7 +286,7 @@ points(x.plot,
        lwd = 4, 
        lty = 2)
 
-## Site 3
+## Site 3: Mandan Experiment Station, ND US
 
 h3<-hist(datW$TAVE[datW$siteN == 3],
          freq=FALSE, 
@@ -276,7 +320,7 @@ points(x.plot,
        lwd = 4, 
        lty = 2)
 
-## Site 4
+## Site 4: Mormon Flat, AZ US
 
 h4<-hist(datW$TAVE[datW$siteN == 4],
          freq=FALSE, 
@@ -311,45 +355,79 @@ points(x.plot,
        lty = 2)
 
 ## Question 6
+
 extreme<- qnorm(0.95, mean(datW$TAVE[datW$siteN==1], na.rm=T), sd(datW$TAVE[datW$siteN==1], na.rm=T))
+# Calculates the threshold for extreme high temperatures
+
 1-pnorm(extreme, mean(datW$TAVE[datW$siteN==1], na.rm=T)+4, sd(datW$TAVE[datW$siteN==1], na.rm=T))
-# We will expect to observe temperatures greater than the current threshold for extreme high temperatures (18.51026)
-# 20.31%
+# pnorm of 18.51026 (extreme) gives me all probability (area of the curve) above extreme temp. threshold
+# Subtracting from 1 gives area above the extreme temp. threshold, and hence the probability that temperatures
+# greater than the threshold for extreme high temperatures are observed
+
+# Ans. We will expect to observe temperatures greater than the current threshold for extreme high temperatures 
+# (18.51026) 20.31%
 
 ## Question 7
+
+# Here, I make a histogram of daily precipitation for Aberdeen
+
 dev.off()
 plot.new()
+
 hist(datW$PRCP[datW$siteN == 1],
      freq=FALSE, 
      main = paste(levels(datW$NAME)[1]),
-     xlab = "Daily Precipitation (Inches)", 
+     xlab = "Daily Precipitation (mm)", 
      ylab="Relative frequency",
      col="grey50",
-     border="white") # Exponential distribution?
-# Shorten x-axis range
+     border="white") 
+
+## Note on histogram above: The distribution of data on daily precipitation for Aberdeen is extremely right skewed
+##                          and may actually be potentially described by the exponential distribution
+
+##                          The right skew makes sense since Aberdeen doesn't receive rain on many days, hence
+##                          high relative frequency for 0
 
 ## Question 8
 
+# Using aggregate function (with FUN= "sum" as an attribute) to get precipitation for each year and site in the data
+
+# Total precipitation for each year across all 5 sites
 prcp_year<- aggregate(datW$PRCP, by=list(as.factor(datW$year)), FUN="sum", na.rm=T)
+
+# Total precipitation for each site across all years
 prcp_site<- aggregate(datW$PRCP, by=list(datW$NAME), FUN="sum", na.rm=T)
 
+
+# Total precipitation for each year for Aberdeen, WA US
 prcp_site1<- aggregate(datW$PRCP[datW$siteN==1], by=list(subset(datW, datW$siteN==1)$year), 
                        FUN="sum", na.rm=T)
+
+# Total precipitation for each year for Livermore, CA US
 prcp_site2<- aggregate(datW$PRCP[datW$siteN==2], by=list(subset(datW, datW$siteN==2)$year), 
                        FUN="sum", na.rm=T)
+
+# Total precipitation for each year for Mandan Experiment Station, ND US
 prcp_site3<- aggregate(datW$PRCP[datW$siteN==3], by=list(subset(datW, datW$siteN==3)$year), 
                        FUN="sum", na.rm=T)
+
+# Total precipitation for each year for Mormon Flat, AZ US
 prcp_site4<- aggregate(datW$PRCP[datW$siteN==4], by=list(subset(datW, datW$siteN==4)$year), 
                        FUN="sum", na.rm=T)
+
+# Total precipitation for each year for Morrisville 6 SW, NY US
 prcp_site5<- aggregate(datW$PRCP[datW$siteN==5], by=list(subset(datW, datW$siteN==5)$year), 
                        FUN="sum", na.rm=T)
 
-#Histogram for ABERDEEN, WA US
+#Histogram of annual precipitation for ABERDEEN, WA US
+# also add lines at mean, 1 standard deviation and -1 standard deviation away from mean to understand
+# distribution of data
+# Also overlayed a normal distribution curve to assess how well normal distribution models the data
 
-hist(prcp_site1$x,
+hist(prcp_site1$x, # Use data on total precipitation for each year for Aberdeen, WA US
      freq=FALSE, 
      main = paste(levels(datW$NAME)[1]),
-     xlab = "Annual precipitation (in inches)", 
+     xlab = "Annual precipitation (in mm)", 
      ylab="Relative frequency",
      col="grey50",
      border="white") # roughly normally distributed
@@ -396,15 +474,23 @@ points(x.plot,
        lwd = 4, 
        lty = 2)
 
-# Anything more for Q8?
 
 ## Question 9
 
 meanprcp_site1<- mean(prcp_site1$x)
+# Mean annual precipitation for Aberdeen
+
 meanprcp_site2<- mean(prcp_site2$x)
+# Mean annual precipitation for Livermore
+
 meanprcp_site3<- mean(prcp_site3$x)
+# Mean annual precipitation for Mandan Experiment Station
+
 meanprcp_site4<- mean(prcp_site4$x)
+# Mean annual precipitation for Mormon Flat
+
 meanprcp_site5<- mean(prcp_site5$x)
+# Mean annual precipitation for Morrisville 6 SW
 
 mean_annual_prcp<- data.frame()
 mean_annual_prcp<- cbind("Number"= 1:5, "Name"= levels(datW$NAME),
