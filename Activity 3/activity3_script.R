@@ -155,5 +155,45 @@ datW$air.tempQ2 <- ifelse(datW$precipitation  >= 2 & datW$lightning.acvitivy >0,
 datW$wind.speedQ2 <- ifelse(datW$precipitation  >= 2 & datW$lightning.acvitivy >0, NA,
                           ifelse(datW$precipitation > 5, NA, datW$wind.speed))
 filter_correct<- datW$wind.speed[!(datW$precipitation  >= 2 & datW$lightning.acvitivy) && datW$precipitation <= 5]
-assert(all(filter_correct %in% datW$wind.speedQ2) && length(filter_correct)==length(datW$wind.speedQ2), 
+
+# gives no error
+assert(all(filter_correct == datW$wind.speedQ2 || (is.na(filter_correct) && is.na(datW$wind.speedQ2))) 
+       && length(filter_correct)==length(datW$wind.speedQ2), 
        "error in filtering the data as expected")
+
+# Plot of windspeed with the new data
+plot(datW$DD, datW$wind.speedQ2, pch=19, type= "b", xlab= "Day of Year", ylab = "Wind speed (measured in m.s)")
+
+## Question 7, 9
+
+par(mfrow= c(2,2))
+
+plot(datW$DD, datW$soil.temp, pch=19, type="b", xlab = "Day of Year",
+     ylab="Soil Temperature (degrees Celcius)")
+
+plot(datW$DD, datW$soil.moisture, pch=19, type="b", xlab = "Day of Year",
+     ylab="Soil moisture (cm3 water per cm3 soil)")
+
+plot(datW$DD, datW$air.tempQ2, pch=19, type="b", xlab = "Day of Year",
+     ylab="Air temperature (in degree Celcius)")
+
+plot(datW$DD, datW$precipitation, pch=19, type="b", xlab = "Day of Year",
+     ylab="Precipitation (in mm)")
+
+
+## Question 8
+
+avg_airtemp<- mean(datW$air.tempQ2, na.rm=T)
+len_airtemp<- length(datW$air.tempQ2[!is.na(datW$air.tempQ2)])
+
+avg_windspeed<- mean(datW$wind.speedQ2, na.rm= T)
+len_windspeed<- length(datW$wind.speedQ2[!is.na(datW$wind.speedQ2)])
+
+avg_soilmoisture<- mean(datW$soil.moisture, na.rm=T)
+len_soilmoisture<- length(datW$soil.moisture[!is.na(datW$soil.moisture)])
+
+avg_soiltemp<- mean(datW$soil.temp, na.rm=T)
+len_soiltemp<- length(datW$soil.temp[!is.na(datW$soil.temp)])
+
+total_precipitation<- sum(datW$precipitation, na.rm = T)
+len_precipitation<- length(datW$precipitation[!is.na(datW$precipitation)])
