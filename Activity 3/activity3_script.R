@@ -157,6 +157,12 @@ datW$wind.speedQ2 <- ifelse(datW$precipitation  >= 2 & datW$lightning.acvitivy >
 filter_correct<- datW$wind.speed[!(datW$precipitation  >= 2 & datW$lightning.acvitivy) && datW$precipitation <= 5]
 
 # gives no error
+
+# A brief note on assert condition: it checks if the data is filtered as expected
+# To do so, we use filter_correct vectors which subsets datW$wind.speed according to the filtering requirements
+# A special consideration made in checking for equality of vectors here is also accounting for NA values
+# Fianlly, it is important to check that length of vectors is equal besides the values in them
+
 assert(all(filter_correct == datW$wind.speedQ2 || (is.na(filter_correct) && is.na(datW$wind.speedQ2))) 
        && length(filter_correct)==length(datW$wind.speedQ2), 
        "error in filtering the data as expected")
@@ -166,34 +172,53 @@ plot(datW$DD, datW$wind.speedQ2, pch=19, type= "b", xlab= "Day of Year", ylab = 
 
 ## Question 7, 9
 
+# arranges all 4 plots into a 2x2 matrix in the plot window
 par(mfrow= c(2,2))
 
+
+# plot soil temperature throughout all observations in the study period
 plot(datW$DD, datW$soil.temp, pch=19, type="b", xlab = "Day of Year",
      ylab="Soil Temperature (degrees Celcius)")
 
+# plot soil moisture throughout all observations in the study period
 plot(datW$DD, datW$soil.moisture, pch=19, type="b", xlab = "Day of Year",
      ylab="Soil moisture (cm3 water per cm3 soil)")
 
+# plot air temperature throughout all observations in the study period
 plot(datW$DD, datW$air.tempQ2, pch=19, type="b", xlab = "Day of Year",
      ylab="Air temperature (in degree Celcius)")
 
+# plot precipitation throughout all observations in the study period
 plot(datW$DD, datW$precipitation, pch=19, type="b", xlab = "Day of Year",
      ylab="Precipitation (in mm)")
 
 
 ## Question 8
 
-avg_airtemp<- mean(datW$air.tempQ2, na.rm=T)
+# all the below values have been rounded off to report the findings with the correct
+# number of decimal places within the sensor error
+
+avg_airtemp<- round(mean(datW$air.tempQ2, na.rm=T),0) # average air temperature
+
+# number of observations that went into the calculation for average air temperature
 len_airtemp<- length(datW$air.tempQ2[!is.na(datW$air.tempQ2)])
 
-avg_windspeed<- mean(datW$wind.speedQ2, na.rm= T)
+avg_windspeed<- round(mean(datW$wind.speedQ2, na.rm= T),1) # average wind speed
+
+# number of observations that went into the calculation for average wind speed
 len_windspeed<- length(datW$wind.speedQ2[!is.na(datW$wind.speedQ2)])
 
-avg_soilmoisture<- mean(datW$soil.moisture, na.rm=T)
+avg_soilmoisture<- round(mean(datW$soil.moisture, na.rm=T),3) # average soil moisture
+
+# number of observations that went into the calculation for average soil moisture
 len_soilmoisture<- length(datW$soil.moisture[!is.na(datW$soil.moisture)])
 
-avg_soiltemp<- mean(datW$soil.temp, na.rm=T)
+avg_soiltemp<- round(mean(datW$soil.temp, na.rm=T),0) # average soil temperature
+
+# number of observations that went into the calculation for average soil temperature
 len_soiltemp<- length(datW$soil.temp[!is.na(datW$soil.temp)])
 
-total_precipitation<- sum(datW$precipitation, na.rm = T)
+total_precipitation<- sum(datW$precipitation, na.rm = T) # total precipitation
+
+# number of observations that went into the calculation for total precipitation
 len_precipitation<- length(datW$precipitation[!is.na(datW$precipitation)])
