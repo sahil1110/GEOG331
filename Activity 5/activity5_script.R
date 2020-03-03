@@ -1,6 +1,6 @@
 #load in lubridate
 
-# install.packages("lubridate")
+install.packages("lubridate")
 
 library(lubridate)
 
@@ -178,3 +178,42 @@ legend("topright", c("mean","1 standard deviation", "2017 observations"), #legen
 
 mean(datD$discharge[datD$year==2017])
 sd(datD$discharge[datD$year==2017])
+
+len_obs<- aggregate(datP$doy, by=list(datP$doy, datP$year), FUN= length)
+colnames(len_obs)<- c("doy", "Year", "Number of observations")
+len_obs<- subset(len_obs, len_obs$`Number of observations`==24)
+
+## Question 8 ##
+par(mai=c(1,1,1,1))
+
+hydroD <- datD[datD$doy >= 356 & datD$doy < 358 & datD$year == 2012,]
+hydroP <- datP[datP$doy >= 356 & datP$doy < 358 & datP$year == 2012,]
+
+#get minimum and maximum range of discharge to plot
+#go outside of the range so that it's easy to see high/low values
+#floor rounds down the integer
+yl <- floor(min(hydroD$discharge))-1
+#celing rounds up to the integer
+yh <- ceiling(max(hydroD$discharge))+1
+#minimum and maximum range of precipitation to plot
+pl <- 0
+pm <-  ceiling(max(hydroP$HPCP))+.5
+#scale precipitation to fit on the 
+hydroP$pscale <- (((yh-yl)/(pm-pl)) * hydroP$HPCP) + yl
+
+par(mai=c(1,1,1,1))
+#make plot of discharge
+plot(hydroD$decDay,
+     hydroD$discharge, 
+     type="l", 
+     ylim=c(yl,yh), 
+     lwd=2,
+     xlab="Day of year", 
+     ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")))
+#add bars to indicate precipitation 
+for(i in 1:nrow(hydroP)){
+  polygon(c(hydroP$decDay[i]-0.017,hydroP$decDay[i]-0.017,
+            hydroP$decDay[i]+0.017,hydroP$decDay[i]+0.017),
+          c(yl,hydroP$pscale[i],hydroP$pscale[i],yl),
+          col=rgb(0.392, 0.584, 0.929,.2), border=NA)
+}
