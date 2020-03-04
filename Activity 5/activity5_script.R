@@ -166,6 +166,21 @@ legend("topright", c("mean","mean (days with full 24 hour precipitation measurem
        pch= c(NA, 6),
        col= c("black", "red"))
 
+## alternative plot
+
+#plot discharge
+plot(datD$decYear, datD$discharge, xlab="Year", ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")),
+     pch= ifelse(datD$doy %in% len_obs$doy & datD$year %in% len_obs$Year & datD$hour==0, 8, 1),
+     cex= ifelse(datD$doy %in% len_obs$doy & datD$year %in% len_obs$Year & datD$hour==0, 3, 0.4),
+     col= ifelse(datD$doy %in% len_obs$doy & datD$year %in% len_obs$Year & datD$hour==0, "red", "black"))
+
+legend("topright", c("mean","mean (days with full 24 hour precipitation measurements)"), #legend items
+       lwd=c(2,NA),#lines
+       border=NA,#no border for both fill boxes (don't need a vector here since both are the same)
+       bty="n",
+       pch= c(NA, 6),
+       col= c("black", "red"))
+
 ## Question 8 ##
 par(mai=c(1,1,1,1)) # bigger margins
 
