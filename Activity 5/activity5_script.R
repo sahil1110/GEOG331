@@ -4,7 +4,9 @@
 
 ### Note: I have labeled the code relevant for each section. 
 
-###Practice/ modifying databases relevant to the entire activity's exercises
+
+
+###Practice/ modifying databases relevant to the entire activity's exercises###
 
 
 #load in lubridate
@@ -81,7 +83,7 @@ plot(aveF$doy,aveF$dailyAve,
      xaxs="i", yaxs ="i",#remove gaps from axes
      axes=FALSE)#no axes
 par(new=T)
-plot(datD$doy[datD$year==2017], datD$discharge[datD$year==2017], col="green", type="l"
+plot(datD$doy[datD$year==2017], datD$discharge[datD$year==2017], col="green", type="l" # plot 2017 observations
      ,xaxs="i", yaxs ="i",#remove gaps from axes
      axes=FALSE, lwd=2,
      xlab="Year", 
@@ -94,8 +96,10 @@ polygon(c(aveF$doy, rev(aveF$doy)),#x coordinates
 months_days<- c(31, 31+29, 31+29+31, 31+29+31+30, 31+29+31+30+31, 31+29+31+30+31+30, 
                 31+29+31+30+31+30+31, 31+29+31+30+31+30+31+31, 31+29+31+30+31+30+31+31+30, 
                 31+29+31+30+31+30+31+31+30+31, 31+29+31+30+31+30+31+31+30+31+30, 31+29+31+30+31+30+31+31+30+31+30+31,
-                31+29+31+30+31+30+31+31+30+31+30+31+30)
-months_days<- months_days-30
+                31+29+31+30+31+30+31+31+30+31+30+31+30) # contains day numbers for start of each month
+months_days<- months_days-30 # minor change/ trick to adjust label positions on x-axis
+
+#Vector containing all months (abbreviated) of the year
 months<- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "")
 axis(1, months_days, #tick intervals
      lab=months) #tick labels
@@ -110,17 +114,31 @@ legend("topright", c("mean","1 standard deviation", "2017 observations"), #legen
 
 ### Question 6 ###
 
+#Mean streamflow (discharge feet cubed per second) in 2017
 mean(datD$discharge[datD$year==2017])
+
+#Standard deviation of streamflow (discharge feet cubed per second) data in 2017
 sd(datD$discharge[datD$year==2017])
 
 ### Question 7 ###
 
+# 2 alternative approaches to create a dataframe indicating days that have a full 24 hours of precipitation
+# measurements
+
+## Approach 1
+
+#List/dataframe of number of observations for each doy (of each year)
 len_obs<- aggregate(datP$doy, by=list(datP$doy, datP$year), FUN= length)
+
+#Assign column names to len_obs
 colnames(len_obs)<- c("doy", "Year", "Number of observations")
+
+#Subset len_obs to only include doy with full 24 observations
 len_obs<- subset(len_obs, len_obs$`Number of observations`==24)
 
-# Alternative approach:
+# Alternative approach 2:
 
+#Use ifelse statement to indicate observations that have full 24 hour observations as 1 and others as 0
 datD$full24<- ifelse(datD$year %in% len_obs$Year & datD$doy %in% len_obs$doy, 1, 0)
 
 
@@ -149,10 +167,14 @@ legend("topright", c("mean","mean (days with full 24 hour precipitation measurem
        col= c("black", "red"))
 
 ## Question 8 ##
-par(mai=c(1,1,1,1))
+par(mai=c(1,1,1,1)) # bigger margins
 
-hydroD <- datD[datD$doy >= 356 & datD$doy < 358 & datD$year == 2012,]
-hydroP <- datP[datP$doy >= 356 & datP$doy < 358 & datP$year == 2012,]
+# We consider days 356-357 (21 December- 22 December) in the winter of year 2012
+
+hydroD <- datD[datD$doy >= 356 & datD$doy < 358 & datD$year == 2012,] # subsetting streamflow dataframe for only 
+                                                                      # 21-22 Dec observations
+hydroP <- datP[datP$doy >= 356 & datP$doy < 358 & datP$year == 2012,] # subsetting precipitation dataframe for only
+                                                                      # 21-22 Dec observations
 
 #get minimum and maximum range of discharge to plot
 #go outside of the range so that it's easy to see high/low values
@@ -190,31 +212,35 @@ for(i in 1:nrow(hydroP)){
 # Fall: September 1- November 30
 # Winter: December 1- February 28
 
-Seasons<- c("Spring", "Summer", "Fall", "Winter")
+Seasons<- c("Spring", "Summer", "Fall", "Winter") # vector representing the seasons
 
+# add a new column to datD indicating the meteorolgical season corresponding to the observation
 datD$seasons<- ifelse(datD$doy>=60 & datD$doy<152, Seasons[1], ifelse(datD$doy<244, Seasons[2], 
                 ifelse(datD$doy<335, Seasons[3], Seasons[4])))
 
 # install.packages("ggplot2")
 library(ggplot2)
-datD$seasons<- as.factor(datD$seasons)
+
+## Violin plot 2016 ##
+
+datD$seasons<- as.factor(datD$seasons) # Convert seasons column in the dataframe to factor data type
 #make a violin plot
-ggplot(data= datD[datD$year==2016,], aes(seasons,discharge)) + 
-  geom_violin(fill="lightblue", trim = FALSE,
+ggplot(data= datD[datD$year==2016,], aes(seasons,discharge)) + # discharge data for 2016 only 
+  geom_violin(fill="lightblue", trim = FALSE, # makes a violin plot
               alpha= 0.5,
               show.legend= FALSE)+
-  xlab("Seasons")+
-  ylab(expression(paste("Discharge ft"^"3 ","sec"^"-1", " (Year 2016)")))+
-  ggtitle("Violin plot of discharge by season for the year 2016")+
-  theme_bw()
+  xlab("Seasons")+ # x-axis label
+  ylab(expression(paste("Discharge ft"^"3 ","sec"^"-1", " (Year 2016)")))+ # yaxis label
+  ggtitle("Violin plot of discharge by season for the year 2016")+ # Plot title
+  theme_bw() # Changes the background of the plot
 
 ## Violin plot 2017 ##
 
-ggplot(data= datD[datD$year==2017,], aes(seasons,discharge)) + 
+ggplot(data= datD[datD$year==2017,], aes(seasons,discharge)) + # discharge data for 2017 only
   geom_violin(fill="lightblue", trim = FALSE,
               alpha= 0.5,
               show.legend= FALSE)+
   xlab("Seasons")+
-  ylab(expression(paste("Discharge ft"^"3 ","sec"^"-1", " (Year 2016)")))+
+  ylab(expression(paste("Discharge ft"^"3 ","sec"^"-1", " (Year 2017)")))+
   ggtitle("Violin plot of discharge by season for the year 2017")+
   theme_bw()
