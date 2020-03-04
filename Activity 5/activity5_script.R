@@ -1,6 +1,15 @@
+#### Name: Sahil Lalwani
+
+### Activity 5
+
+### Note: I have labeled the code relevant for each section. 
+
+###Practice/ modifying databases relevant to the entire activity's exercises
+
+
 #load in lubridate
 
-install.packages("lubridate")
+# install.packages("lubridate")
 
 library(lubridate)
 
@@ -49,93 +58,16 @@ datP$decDay <- datP$doy + (datP$hour/24)
 #calculate a decimal year, but account for leap year
 datP$decYear <- ifelse(leap_year(datP$year),datP$year + ((datP$decDay-1)/366),
                        datP$year + ((datP$decDay-1)/365))
-
-#plot discharge
-plot(datD$decYear, datD$discharge, type="l", xlab="Year", ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")))
-
 #basic formatting
 aveF <- aggregate(datD$discharge, by=list(datD$doy), FUN="mean")
 colnames(aveF) <- c("doy","dailyAve")
 sdF <- aggregate(datD$discharge, by=list(datD$doy), FUN="sd")
 colnames(sdF) <- c("doy","dailySD")
 
+### Question 5 ###
+
 #start new plot
 dev.new(width=8,height=8)
-
-#bigger margins
-par(mai=c(1,1,1,1))
-#make plot
-plot(aveF$doy,aveF$dailyAve, 
-     type="l", 
-     xlab="Year", 
-     ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")),
-     lwd=2)
-
-#bigger margins
-par(mai=c(1,1,1,1))
-#make plot
-plot(aveF$doy,aveF$dailyAve, 
-     type="l", 
-     xlab="Year", 
-     ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")),
-     lwd=2,
-     ylim=c(0,90),
-     xaxs="i", yaxs ="i")#remove gaps from axes  
-#show standard deviation around the mean
-polygon(c(aveF$doy, rev(aveF$doy)),#x coordinates
-        c(aveF$dailyAve-sdF$dailySD,rev(aveF$dailyAve+sdF$dailySD)),#ycoord
-        col=rgb(0.392, 0.584, 0.929,.2), #color that is semi-transparent
-        border=NA#no border
-)
-
-#bigger margins
-par(mai=c(1,1,1,1))
-#make plot
-plot(aveF$doy,aveF$dailyAve, 
-     type="l", 
-     xlab="Year", 
-     ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")),
-     lwd=2,
-     ylim=c(0,90),
-     xaxs="i", yaxs ="i",#remove gaps from axes
-     axes=FALSE)#no axes
-polygon(c(aveF$doy, rev(aveF$doy)),#x coordinates
-        c(aveF$dailyAve-sdF$dailySD,rev(aveF$dailyAve+sdF$dailySD)),#ycoord
-        col=rgb(0.392, 0.584, 0.929,.2), #color that is semi-transparent
-        border=NA#no border
-)       
-axis(1, seq(0,360, by=40), #tick intervals
-     lab=seq(0,360, by=40)) #tick labels
-axis(2, seq(0,80, by=20),
-     seq(0,80, by=20),
-     las = 2)#show ticks at 90 degree angle
-
-#bigger margins
-par(mai=c(1,1,1,1))
-#make plot
-plot(aveF$doy,aveF$dailyAve, 
-     type="l", 
-     xlab="Year", 
-     ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")),
-     lwd=2,
-     ylim=c(0,90),
-     xaxs="i", yaxs ="i",#remove gaps from axes
-     axes=FALSE)#no axes
-polygon(c(aveF$doy, rev(aveF$doy)),#x coordinates
-        c(aveF$dailyAve-sdF$dailySD,rev(aveF$dailyAve+sdF$dailySD)),#ycoord
-        col=rgb(0.392, 0.584, 0.929,.2), #color that is semi-transparent
-        border=NA#no border
-)       
-axis(1, seq(0,360, by=40), #tick intervals
-     lab=seq(0,360, by=40)) #tick labels
-axis(2, seq(0,80, by=20),
-     seq(0,80, by=20),
-     las = 2)#show ticks at 90 degree angle
-legend("topright", c("mean","1 standard deviation"), #legend items
-       lwd=c(2,NA),#lines
-       fill=c(NA,rgb(0.392, 0.584, 0.929,.2)),#fill boxes
-       border=NA,#no border for both fill boxes (don't need a vector here since both are the same)
-       bty="n")#no legend border
 
 #bigger margins
 par(mai=c(1,1,1,1))
@@ -176,8 +108,12 @@ legend("topright", c("mean","1 standard deviation", "2017 observations"), #legen
        pch=c(NA,15, NA),#symbols
        bty="n")#no legend border
 
+### Question 6 ###
+
 mean(datD$discharge[datD$year==2017])
 sd(datD$discharge[datD$year==2017])
+
+### Question 7 ###
 
 len_obs<- aggregate(datP$doy, by=list(datP$doy, datP$year), FUN= length)
 colnames(len_obs)<- c("doy", "Year", "Number of observations")
@@ -246,6 +182,8 @@ for(i in 1:nrow(hydroP)){
           c(yl,hydroP$pscale[i],hydroP$pscale[i],yl),
           col=rgb(0.392, 0.584, 0.929,.2), border=NA)
 }
+
+### Question 9 ###
 
 # Spring: March 1- May 31
 # Summer: June 1- August 31
