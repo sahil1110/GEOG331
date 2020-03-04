@@ -183,6 +183,11 @@ len_obs<- aggregate(datP$doy, by=list(datP$doy, datP$year), FUN= length)
 colnames(len_obs)<- c("doy", "Year", "Number of observations")
 len_obs<- subset(len_obs, len_obs$`Number of observations`==24)
 
+# Alternative approach:
+
+datD$full24<- ifelse(datD$year %in% len_obs$Year & datD$doy %in% len_obs$doy, 1, 0)
+
+
 ## Question 8 ##
 par(mai=c(1,1,1,1))
 
@@ -217,3 +222,37 @@ for(i in 1:nrow(hydroP)){
           c(yl,hydroP$pscale[i],hydroP$pscale[i],yl),
           col=rgb(0.392, 0.584, 0.929,.2), border=NA)
 }
+
+# Spring: March 1- May 31
+# Summer: June 1- August 31
+# Fall: September 1- November 30
+# Winter: December 1- February 28
+
+Seasons<- c("Spring", "Summer", "Fall", "Winter")
+
+datD$seasons<- ifelse(datD$doy>=60 & datD$doy<152, Seasons[1], ifelse(datD$doy<244, Seasons[2], 
+                ifelse(datD$doy<335, Seasons[3], Seasons[4])))
+
+# install.packages("ggplot2")
+library(ggplot2)
+datD$seasons<- as.factor(datD$seasons)
+#make a violin plot
+ggplot(data= datD[datD$year==2016,], aes(seasons,discharge)) + 
+  geom_violin(fill="lightblue", trim = FALSE,
+              alpha= 0.5,
+              show.legend= FALSE)+
+  xlab("Seasons")+
+  ylab(expression(paste("Discharge ft"^"3 ","sec"^"-1", " (Year 2016)")))+
+  ggtitle("Violin plot of discharge by season for the year 2016")+
+  theme_bw()
+
+## Violin plot 2017 ##
+
+ggplot(data= datD[datD$year==2017,], aes(seasons,discharge)) + 
+  geom_violin(fill="lightblue", trim = FALSE,
+              alpha= 0.5,
+              show.legend= FALSE)+
+  xlab("Seasons")+
+  ylab(expression(paste("Discharge ft"^"3 ","sec"^"-1", " (Year 2016)")))+
+  ggtitle("Violin plot of discharge by season for the year 2017")+
+  theme_bw()
