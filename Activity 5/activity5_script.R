@@ -188,6 +188,30 @@ len_obs<- subset(len_obs, len_obs$`Number of observations`==24)
 datD$full24<- ifelse(datD$year %in% len_obs$Year & datD$doy %in% len_obs$doy, 1, 0)
 
 
+#bigger margins
+par(mai=c(1,1,1,1))
+#make plot
+plot(aveF$doy,aveF$dailyAve, 
+     xlab="Year", 
+     ylab=expression(paste("Discharge ft"^"3 ","sec"^"-1")),
+     ylim=c(0,90),
+     xaxs="i", yaxs ="i",#remove gaps from axes
+     axes=FALSE,
+     pch= ifelse(aveF$doy %in% len_obs$doy, 6, 1),
+     cex= ifelse(aveF$doy %in% len_obs$doy, 1, 0.8),
+     col= ifelse(aveF$doy %in% len_obs$doy, "red", "black"))#no axes
+axis(1, seq(0,360, by=40), #tick intervals
+     lab=seq(0,360, by=40)) #tick labels
+axis(2, seq(0,60, by=20),
+     seq(0,60, by=20),
+     las = 2)#show ticks at 90 degree angle
+legend("topright", c("mean","mean (days with full 24 hour precipitation measurements)"), #legend items
+       lwd=c(2,NA),#lines
+       border=NA,#no border for both fill boxes (don't need a vector here since both are the same)
+       bty="n",
+       pch= c(NA, 6),
+       col= c("black", "red"))
+
 ## Question 8 ##
 par(mai=c(1,1,1,1))
 
