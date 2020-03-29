@@ -151,3 +151,75 @@ for(i in 1:39){
 }
 
 spplot(g2015p, "a2015per.change")
+
+## Answer 6 ##
+
+maxloss_glac<- gAll$GLACNAME[gAll$a2015per.change==max(gAll$a2015per.change)]
+
+#Without background imagery (with axes)
+plot(subset(g1966, g1966@data$GLACNAME=="Boulder Glacier"), col="palegreen2", border=NA, axes=T)
+plot(subset(g1998, g1998@data$GLACNAME=="Boulder Glacier"), col="royalblue3", add=TRUE, border=NA)
+plot(subset(g2005, g2005@data$GLACNAME=="Boulder Glacier"), col="darkgoldenrod4", add=TRUE, border=NA)
+plot(subset(g2015, g2015@data$GLACNAME=="Boulder Glacier"), col="tomato3", add=TRUE, border=NA)
+
+#Alternative 1
+plotRGB(rgbL, ext=c(272500,275500,5425100,5432600), stretch="lin")
+plot(subset(g1966, g1966@data$GLACNAME=="Boulder Glacier"), col="palegreen2", border=NA, add=T)
+plot(subset(g1998, g1998@data$GLACNAME=="Boulder Glacier"), col="royalblue3", add=TRUE, border=NA)
+plot(subset(g2005, g2005@data$GLACNAME=="Boulder Glacier"), col="darkgoldenrod4", add=TRUE, border=NA)
+plot(subset(g2015, g2015@data$GLACNAME=="Boulder Glacier"), col="tomato3", add=TRUE, border=NA)
+
+#Alternative 2
+plotRGB(rgbL, ext=c(272500,279500,5415100,5432600), stretch="lin")
+plot(subset(g1966, g1966@data$GLACNAME=="Boulder Glacier"), col="palegreen2", border=NA, add=T)
+plot(subset(g1998, g1998@data$GLACNAME=="Boulder Glacier"), col="royalblue3", add=TRUE, border=NA)
+plot(subset(g2005, g2005@data$GLACNAME=="Boulder Glacier"), col="darkgoldenrod4", add=TRUE, border=NA)
+plot(subset(g2015, g2015@data$GLACNAME=="Boulder Glacier"), col="tomato3", add=TRUE, border=NA)
+
+#designate that NDVIraster list is a stack
+NDVIstack <- stack(NDVIraster)
+#set up lm function to apply to every cell
+#where x is the value of a cell
+#need to first skip NA values (like lakes)
+#if NA is missing in first raster, it is missing in all
+#so we can tell R to assign an NA rather than fitting the function
+timeT <- ndviYear
+fun <- function(x) {
+  if(is.na(x[1])){
+    NA}else{
+      #fit a regression and extract a slope
+      lm(x ~ timeT)$coefficients[2] }}
+#apply the slope function to the rasters
+NDVIfit <- calc(NDVIstack,fun)
+#plot the change in NDVI
+plot(NDVIfit, axes=FALSE)
+
+#buffer glaciers
+glacier500m <- gBuffer(g1966p,#data to buffer
+                       byid=TRUE,#keeps original shape id 
+                       width=500)#width in coordinate system units
+#convert to a raster
+par(mai=c(0.4,0.4,0.4,0.4))
+buffRaster <- rasterize(glacier500m,#vector to convert to raster
+                        NDVIraster[[1]], #raster to match cells and extent
+                        field=glacier500m@data$GLACNAME, #field to convert to raster data
+                        background=0)#background value for missing data
+plot(buffRaster)
+
+#rasterize gralciers
+glacRaster <- rasterize(g1966p, NDVIraster[[1]], field=g1966p@data$GLACNAME, background=0)
+#subtract buffer from original glacier
+glacZones <- buffRaster - glacRaster
+plot(glacZones)
+
+
+## Question 9 ##
+
+meanChange <- zonal(NDVIfit, #NDVI function to summarize
+                    glacZones,#raster with zones
+                    "mean")#function to apply
+meanChange<-meanChange[-1,]
+
+g2015@data$meanChange<-meanChange[,2]
+
+spplot(g2015, "meanChange")
