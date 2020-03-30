@@ -223,3 +223,6 @@ meanChange<-meanChange[-1,]
 g2015@data$meanChange<-meanChange[,2]
 
 spplot(g2015, "meanChange")
+
+## Question 11 ##
+
