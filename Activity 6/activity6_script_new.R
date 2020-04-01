@@ -228,7 +228,15 @@ g2015@data$meanChange<-meanChange[,2]
 # map where the mean change in vegetation is color coded within the 2015 glacier polygons
 spplot(g2015, "meanChange")
 
-## Question 11 ##
+##### Question 10 #####
+
+range_NDVI<-range(meanChange[,2]) # range of mean change in NDVI values
+# Range: [-0.0012, 0.004]
+
+# proportion of values in meanChange which are positive
+prop_pos_NDVI<- length(subset(meanChange[,2], meanChange[,2]>0))/39 # 74%
+
+##### Question 11 #####
 
 # raster dataset representing the average maximum NDVI change across
 # all years within Glacier National Park
@@ -238,7 +246,7 @@ NDVIfit_avg <- calc(NDVIstack,mean)
 meanChange <- zonal(NDVIfit_avg, #NDVI function to summarize
                     glacZones,#raster with zones
                     "mean")#function to apply
-meanChange<-meanChange[-1,]
+meanChange<-meanChange[-1,] # removing zone zero
 
 for(i in 1:39){
   # add average maximum NDVI across each year as a column to the g2015p glacier vector data
@@ -246,13 +254,13 @@ for(i in 1:39){
 }
 
 
-plot(NDVIfit_avg, axes=F, legend= F, main="Surrounding maximum NDVI average")
+plot(NDVIfit_avg, axes=F, legend= T, main="Glacier extent by surrounding\nmaximum NDVI average")
 g2015p@data$NDVIcol <- ifelse(g2015p@data$NDVImean<0.2,"blue",
                         ifelse(g2015p@data$NDVImean<0.3, "darkorchid1",
                         ifelse(g2015p@data$NDVImean<0.4, "gray48",
                         ifelse(g2015p@data$NDVImean<0.5, "gray0", 
                         ifelse(g2015p@data$NDVImean<0.6, "deeppink", "firebrick1")))))
-legend("topright", c("<0.2","<0.3","<0.4", 
+legend("topleft", c("<0.2","<0.3","<0.4", 
         "<0.5", "<0.6", ">=0.6"), fill=c("blue", "darkorchid1", "gray48", "gray0",
                                          "deeppink", "firebrick1" ), horiz=FALSE, cex=0.8)
 plot(g2015p, add=TRUE, col=paste(g2015p@data$NDVIcol),border=FALSE)
