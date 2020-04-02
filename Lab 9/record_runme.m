@@ -1,0 +1,1 @@
+clear; delete output.txt; diary output.txt; runme; diary off

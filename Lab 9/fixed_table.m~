@@ -1,0 +1,5 @@
+f= @(x) x.^2-3;
+
+
+
+fprintf('%2i: x=%18.12e, f=%18.12e\n',count,x1,funct); 

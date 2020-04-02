@@ -1,0 +1,1721 @@
+{'runme' is not found in the current folder or on the MATLAB path, but exists in:
+    /Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 8
+
+<a href = "matlab:cd '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 8'">Change the MATLAB current folder</a> or <a href = "matlab:addpath '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 8'">add its folder to the MATLAB path</a>.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('record_runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/record_runme.m', 1)" style="font-weight:bold">record_runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/record_runme.m',1,0)">line 1</a>)
+clear; delete output.txt; diary output.txt; runme; diary off
+} 
+fixed_table
+g1(4.15)
+
+ans =
+
+   23.8245
+
+g1(1.5)
+
+ans =
+
+    1.1250
+
+g1(1.125)
+
+ans =
+
+    0.4746
+
+g1(0.4746)
+
+ans =
+
+    0.0356
+
+g1(0.0356)
+
+ans =
+
+   1.5039e-05
+
+1^3
+
+ans =
+
+     1
+
+2^3
+
+ans =
+
+     8
+
+1.5^3
+
+ans =
+
+    3.3750
+
+3.375/3
+
+ans =
+
+    1.1250
+
+tvalues
+{Undefined function or variable 'tvalues'.
+} 
+timeplot
+{Error: <a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/timeplot.m',4,9)">File: timeplot.m Line: 4 Column: 9
+</a>Invalid expression. Check for missing or extra characters.
+} 
+timeplot
+tvalues
+
+tvalues =
+
+  Columns 1 through 18
+
+     0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17
+
+  Columns 19 through 36
+
+    18    19    20    21    22    23    24    25    26    27    28    29    30    31    32    33    34    35
+
+  Columns 37 through 54
+
+    36    37    38    39    40    41    42    43    44    45    46    47    48    49    50    51    52    53
+
+  Columns 55 through 72
+
+    54    55    56    57    58    59    60    61    62    63    64    65    66    67    68    69    70    71
+
+  Columns 73 through 90
+
+    72    73    74    75    76    77    78    79    80    81    82    83    84    85    86    87    88    89
+
+  Columns 91 through 101
+
+    90    91    92    93    94    95    96    97    98    99   100
+
+timeplot
+timeplot
+runme
+runme
+{Attempt to execute SCRIPT timeplot as a function:
+/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/timeplot.m
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 1)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',1,0)">line 1</a>)
+m= timeplot
+} 
+timeplot
+runme
+runme
+cobweb_simple([.2 .4])
+{'cobweb_simple' is not found in the current folder or on the MATLAB path, but exists in:
+    /Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9
+
+<a href = "matlab:cd '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9'">Change the MATLAB current folder</a> or <a href = "matlab:addpath '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9'">add its folder to the MATLAB path</a>.
+} 
+cobweb_simple
+{'cobweb_simple' is not found in the current folder or on the MATLAB path, but exists in:
+    /Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9
+
+<a href = "matlab:cd '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9'">Change the MATLAB current folder</a> or <a href = "matlab:addpath '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9'">add its folder to the MATLAB path</a>.
+} 
+cobweb_simple([0.2 0.4])
+{'cobweb_simple' is not found in the current folder or on the MATLAB path, but exists in:
+    /Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9
+
+<a href = "matlab:cd '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9'">Change the MATLAB current folder</a> or <a href = "matlab:addpath '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9'">add its folder to the MATLAB path</a>.
+} 
+cobweb_simple
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cobweb_simple', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb_simple.m', 2)" style="font-weight:bold">cobweb_simple</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb_simple.m',2,0)">line 2</a>)
+xs= zeros(1, 2*length(xvalues)-1);
+} 
+cobweb_simple(0.2 0.3)
+ cobweb_simple(0.2 0.3)
+                   
+{Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or
+other syntax error. To construct matrices, use brackets instead of parentheses.
+} 
+cobweb_simple([0.2 0.3])
+
+m =
+
+    0.2000    0.2000    0.3000
+    0.2000    0.3000    0.3000
+
+
+ans =
+
+    0.2000    0.2000    0.3000
+    0.2000    0.3000    0.3000
+
+cobweb_simple([0.2 0.3])(2,)
+ cobweb_simple([0.2 0.3])(2,)
+                            
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check
+for mismatched delimiters.
+} 
+x= cobweb_simple([0.2 0.3])
+
+m =
+
+    0.2000    0.2000    0.3000
+    0.2000    0.3000    0.3000
+
+
+x =
+
+    0.2000    0.2000    0.3000
+    0.2000    0.3000    0.3000
+
+x(2,)
+ x(2,)
+     
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check
+for mismatched delimiters.
+} 
+x(2:)
+ x(2:)
+     
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check
+for mismatched delimiters.
+} 
+x(1,:)
+
+ans =
+
+    0.2000    0.2000    0.3000
+
+x(2,:)
+
+ans =
+
+    0.2000    0.3000    0.3000
+
+cobweb
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cobweb', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m', 7)" style="font-weight:bold">cobweb</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',7,0)">line 7</a>)
+xvalues= zeros(1, N+1);
+} 
+plot([0 1], [0 1], '--k')
+plot([0 1], [0 1], '-bo')
+runme
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mtimes')" style="font-weight:bold"> * </a>
+Incorrect dimensions for matrix multiplication. Check that the number of columns in the first matrix matches
+the number of rows in the second matrix. To perform elementwise multiplication, use '.*'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme>@(x,r)r*x*(1-x)')" style="font-weight:bold">runme>@(x,r)r*x*(1-x)</a>
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 6)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',6,0)">line 6</a>)
+cobweb(f(x,r), 1/3, 10);
+} 
+f= @(x,r) r*x*(1-x);
+r=3.1
+
+r =
+
+    3.1000
+
+f(x,r)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mtimes')" style="font-weight:bold"> * </a>
+Incorrect dimensions for matrix multiplication. Check that the number of columns in the first matrix matches
+the number of rows in the second matrix. To perform elementwise multiplication, use '.*'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('@(x,r)r*x*(1-x)')" style="font-weight:bold">@(x,r)r*x*(1-x)</a>
+} 
+runme
+{Array indices must be positive integers or logical values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cobweb', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m', 12)" style="font-weight:bold">cobweb</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',12,0)">line 12</a>)
+    x_n1= f(xprev);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 6)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',6,0)">line 6</a>)
+cobweb(f(x,r), 1/3, 10);
+} 
+runme
+{Array indices must be positive integers or logical values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cobweb', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m', 12)" style="font-weight:bold">cobweb</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',12,0)">line 12</a>)
+    x_n1= f(xprev);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 6)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',6,0)">line 6</a>)
+cobweb(f(x,r), 1./3, 10);
+} 
+runme
+<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',3,1)">3   </a>if nargin<4 || isempty(rect)
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Array indices must be positive integers or logical values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cobweb', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m', 12)" style="font-weight:bold">cobweb</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',12,0)">line 12</a>)
+    x_n1= f(xprev);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 6)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',6,0)">line 6</a>)
+cobweb(f(x,r), 1./3, 10);
+} 
+runme
+<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',3,1)">3   </a>if nargin<4 || isempty(rect)
+if system_dependent('IsDebugMode')==1, dbquit; end
+f= @(x,r) r.*x.*(1-x);
+r= 3.1;
+g= @(x) f(x,r);
+g(2)
+
+ans =
+
+   -6.2000
+
+runme
+{Array indices must be positive integers or logical values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cobweb', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m', 12)" style="font-weight:bold">cobweb</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',12,0)">line 12</a>)
+    x_n1= f(xprev);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 7)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',7,0)">line 7</a>)
+cobweb(g(x), 1./3, 10);
+} 
+g(1)
+
+ans =
+
+     0
+
+runme
+<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',3,1)">3   </a>if nargin<4 || isempty(rect)
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Array indices must be positive integers or logical values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cobweb', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m', 12)" style="font-weight:bold">cobweb</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',12,0)">line 12</a>)
+    x_n1= f(xprev);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 7)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',7,0)">line 7</a>)
+cobweb(g(x), 1./3, 10);
+} 
+runme
+<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',3,1)">3   </a>if nargin<4 || isempty(rect)
+if system_dependent('IsDebugMode')==1, dbquit; end
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+runme
+runme
+plot([0 1], [0 1])
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+
+m =
+
+  Columns 1 through 10
+
+    0.6000    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973
+    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973    1.2632
+
+  Columns 11 through 20
+
+    1.2632    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661
+    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661    1.3938
+
+  Columns 21 through 30
+
+    1.3938    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918
+    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918    1.2698
+
+  Columns 31 through 40
+
+    1.2698    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719
+    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719    1.3891
+
+  Columns 41 through 50
+
+    1.3891    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875
+    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875    1.2748
+
+  Columns 51 through 60
+
+    1.2748    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765
+    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765    1.3854
+
+  Columns 61 through 70
+
+    1.3854    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841
+    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841    1.2787
+
+  Columns 71 through 80
+
+    1.2787    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801
+    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801    1.3823
+
+  Columns 81 through 90
+
+    1.3823    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812
+    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812    1.2820
+
+  Columns 91 through 100
+
+    1.2820    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832
+    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832    1.3797
+
+  Column 101
+
+    1.3797
+    1.3797
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.6000    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973
+    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973    1.2632
+
+  Columns 11 through 20
+
+    1.2632    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661
+    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661    1.3938
+
+  Columns 21 through 30
+
+    1.3938    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918
+    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918    1.2698
+
+  Columns 31 through 40
+
+    1.2698    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719
+    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719    1.3891
+
+  Columns 41 through 50
+
+    1.3891    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875
+    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875    1.2748
+
+  Columns 51 through 60
+
+    1.2748    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765
+    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765    1.3854
+
+  Columns 61 through 70
+
+    1.3854    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841
+    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841    1.2787
+
+  Columns 71 through 80
+
+    1.2787    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801
+    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801    1.3823
+
+  Columns 81 through 90
+
+    1.3823    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812
+    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812    1.2820
+
+  Columns 91 through 100
+
+    1.2820    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832
+    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832    1.3797
+
+  Column 101
+
+    1.3797
+    1.3797
+
+runme
+<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/cobweb.m',3,1)">3   </a>if nargin<4 || isempty(rect)
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+
+m =
+
+  Columns 1 through 10
+
+    0.6000    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973
+    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973    1.2632
+
+  Columns 11 through 20
+
+    1.2632    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661
+    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661    1.3938
+
+  Columns 21 through 30
+
+    1.3938    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918
+    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918    1.2698
+
+  Columns 31 through 40
+
+    1.2698    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719
+    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719    1.3891
+
+  Columns 41 through 50
+
+    1.3891    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875
+    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875    1.2748
+
+  Columns 51 through 60
+
+    1.2748    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765
+    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765    1.3854
+
+  Columns 61 through 70
+
+    1.3854    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841
+    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841    1.2787
+
+  Columns 71 through 80
+
+    1.2787    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801
+    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801    1.3823
+
+  Columns 81 through 90
+
+    1.3823    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812
+    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812    1.2820
+
+  Columns 91 through 100
+
+    1.2820    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832
+    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832    1.3797
+
+  Column 101
+
+    1.3797
+    1.3797
+
+f=@(x)x+1
+
+f =
+
+  <a href="matlab:helpPopup function_handle" style="font-weight:bold">function_handle</a> with value:
+
+    @(x)x+1
+
+f([1 2])
+
+ans =
+
+     2     3
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.6000    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973
+    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973    1.2632
+
+  Columns 11 through 20
+
+    1.2632    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661
+    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661    1.3938
+
+  Columns 21 through 30
+
+    1.3938    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918
+    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918    1.2698
+
+  Columns 31 through 40
+
+    1.2698    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719
+    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719    1.3891
+
+  Columns 41 through 50
+
+    1.3891    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875
+    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875    1.2748
+
+  Columns 51 through 60
+
+    1.2748    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765
+    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765    1.3854
+
+  Columns 61 through 70
+
+    1.3854    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841
+    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841    1.2787
+
+  Columns 71 through 80
+
+    1.2787    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801
+    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801    1.3823
+
+  Columns 81 through 90
+
+    1.3823    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812
+    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812    1.2820
+
+  Columns 91 through 100
+
+    1.2820    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832
+    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832    1.3797
+
+  Column 101
+
+    1.3797
+    1.3797
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.6000    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973
+    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973    1.2632
+
+  Columns 11 through 20
+
+    1.2632    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661
+    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661    1.3938
+
+  Columns 21 through 30
+
+    1.3938    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918
+    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918    1.2698
+
+  Columns 31 through 40
+
+    1.2698    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719
+    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719    1.3891
+
+  Columns 41 through 50
+
+    1.3891    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875
+    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875    1.2748
+
+  Columns 51 through 60
+
+    1.2748    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765
+    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765    1.3854
+
+  Columns 61 through 70
+
+    1.3854    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841
+    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841    1.2787
+
+  Columns 71 through 80
+
+    1.2787    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801
+    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801    1.3823
+
+  Columns 81 through 90
+
+    1.3823    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812
+    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812    1.2820
+
+  Columns 91 through 100
+
+    1.2820    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832
+    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832    1.3797
+
+  Column 101
+
+    1.3797
+    1.3797
+
+runme
+{Conversion to function_handle from double is not possible.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('runme', '/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m', 4)" style="font-weight:bold">runme</a> (<a href="matlab: opentoline('/Users/sahil_lalwani/Documents/GitHub/MATH-260/Lab 9/runme.m',4,0)">line 4</a>)
+f(x,r)= r.*x.*(1-x);
+} 
+f(x,r)= r.*x.*(1-x);
+{Conversion to function_handle from double is not possible.
+} 
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+
+m =
+
+  Columns 1 through 10
+
+    0.6000    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973
+    0.6000    1.2600    1.2600    1.3986    1.3986    1.2617    1.2617    1.3973    1.3973    1.2632
+
+  Columns 11 through 20
+
+    1.2632    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661
+    1.2632    1.3961    1.3961    1.2647    1.2647    1.3949    1.3949    1.2661    1.2661    1.3938
+
+  Columns 21 through 30
+
+    1.3938    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918
+    1.3938    1.2674    1.2674    1.3928    1.3928    1.2686    1.2686    1.3918    1.3918    1.2698
+
+  Columns 31 through 40
+
+    1.2698    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719
+    1.2698    1.3908    1.3908    1.2709    1.2709    1.3899    1.3899    1.2719    1.2719    1.3891
+
+  Columns 41 through 50
+
+    1.3891    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875
+    1.3891    1.2729    1.2729    1.3883    1.3883    1.2739    1.2739    1.3875    1.3875    1.2748
+
+  Columns 51 through 60
+
+    1.2748    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765
+    1.2748    1.3868    1.3868    1.2756    1.2756    1.3860    1.3860    1.2765    1.2765    1.3854
+
+  Columns 61 through 70
+
+    1.3854    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841
+    1.3854    1.2773    1.2773    1.3847    1.3847    1.2780    1.2780    1.3841    1.3841    1.2787
+
+  Columns 71 through 80
+
+    1.2787    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801
+    1.2787    1.3835    1.3835    1.2794    1.2794    1.3829    1.3829    1.2801    1.2801    1.3823
+
+  Columns 81 through 90
+
+    1.3823    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812
+    1.3823    1.2808    1.2808    1.3818    1.3818    1.2814    1.2814    1.3812    1.3812    1.2820
+
+  Columns 91 through 100
+
+    1.2820    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832
+    1.2820    1.3807    1.3807    1.2826    1.2826    1.3802    1.3802    1.2832    1.2832    1.3797
+
+  Column 101
+
+    1.3797
+    1.3797
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Column 11
+
+    0.6940
+    0.6940
+
+runme
+
+m =
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Column 41
+
+    0.6114
+    0.6114
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Column 21
+
+    0.6496
+    0.6496
+
+g(2)
+
+ans =
+
+   -6.2000
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627
+    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627    0.6482
+
+  Columns 11 through 20
+
+    0.6482    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506
+    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506    0.6592
+
+  Column 21
+
+    0.6592
+    0.6592
+
+g(2)
+
+ans =
+
+   -5.8000
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627
+    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627    0.6482
+
+  Columns 11 through 20
+
+    0.6482    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506
+    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506    0.6592
+
+  Column 21
+
+    0.6592
+    0.6592
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+    0.3333    0.3333    0.6444    0.6444    0.6645
+    0.3333    0.6444    0.6444    0.6645    0.6645
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627
+    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627    0.6482
+
+  Columns 11 through 20
+
+    0.6482    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506
+    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506    0.6592
+
+  Columns 21 through 30
+
+    0.6592    0.6592    0.6515    0.6515    0.6584    0.6584    0.6522    0.6522    0.6578    0.6578
+    0.6592    0.6515    0.6515    0.6584    0.6584    0.6522    0.6522    0.6578    0.6578    0.6528
+
+  Columns 31 through 40
+
+    0.6528    0.6528    0.6573    0.6573    0.6532    0.6532    0.6569    0.6569    0.6536    0.6536
+    0.6528    0.6573    0.6573    0.6532    0.6532    0.6569    0.6569    0.6536    0.6536    0.6566
+
+  Column 41
+
+    0.6566
+    0.6566
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627
+    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627    0.6482
+
+  Columns 11 through 20
+
+    0.6482    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506
+    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506    0.6592
+
+  Columns 21 through 30
+
+    0.6592    0.6592    0.6515    0.6515    0.6584    0.6584    0.6522    0.6522    0.6578    0.6578
+    0.6592    0.6515    0.6515    0.6584    0.6584    0.6522    0.6522    0.6578    0.6578    0.6528
+
+  Columns 31 through 40
+
+    0.6528    0.6528    0.6573    0.6573    0.6532    0.6532    0.6569    0.6569    0.6536    0.6536
+    0.6528    0.6573    0.6573    0.6532    0.6532    0.6569    0.6569    0.6536    0.6536    0.6566
+
+  Column 41
+
+    0.6566
+    0.6566
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627
+    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627    0.6482
+
+  Columns 11 through 20
+
+    0.6482    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506
+    0.6482    0.6613    0.6613    0.6495    0.6495    0.6601    0.6601    0.6506    0.6506    0.6592
+
+  Columns 21 through 30
+
+    0.6592    0.6592    0.6515    0.6515    0.6584    0.6584    0.6522    0.6522    0.6578    0.6578
+    0.6592    0.6515    0.6515    0.6584    0.6584    0.6522    0.6522    0.6578    0.6578    0.6528
+
+  Columns 31 through 40
+
+    0.6528    0.6528    0.6573    0.6573    0.6532    0.6532    0.6569    0.6569    0.6536    0.6536
+    0.6528    0.6573    0.6573    0.6532    0.6532    0.6569    0.6569    0.6536    0.6536    0.6566
+
+  Column 41
+
+    0.6566
+    0.6566
+
+runme
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616
+    0.3333    0.6889    0.6889    0.6644    0.6644    0.6912    0.6912    0.6616    0.6616    0.6940
+
+  Columns 11 through 20
+
+    0.6940    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012
+    0.6940    0.6583    0.6583    0.6973    0.6973    0.6543    0.6543    0.7012    0.7012    0.6496
+
+  Columns 21 through 30
+
+    0.6496    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372
+    0.6496    0.7057    0.7057    0.6439    0.6439    0.7108    0.7108    0.6372    0.6372    0.7166
+
+  Columns 31 through 40
+
+    0.7166    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297
+    0.7166    0.6295    0.6295    0.7230    0.7230    0.6209    0.6209    0.7297    0.7297    0.6114
+
+  Columns 41 through 50
+
+    0.6114    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919
+    0.6114    0.7365    0.7365    0.6016    0.6016    0.7430    0.7430    0.5919    0.5919    0.7488
+
+  Columns 51 through 60
+
+    0.7488    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573
+    0.7488    0.5831    0.5831    0.7536    0.7536    0.5756    0.5756    0.7573    0.7573    0.5698
+
+  Columns 61 through 70
+
+    0.5698    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628
+    0.5698    0.7599    0.7599    0.5656    0.5656    0.7616    0.7616    0.5628    0.5628    0.7628
+
+  Columns 71 through 80
+
+    0.7628    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639
+    0.7628    0.5609    0.5609    0.7635    0.7635    0.5598    0.5598    0.7639    0.7639    0.5591
+
+  Columns 81 through 90
+
+    0.5591    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584
+    0.5591    0.7642    0.7642    0.5586    0.5586    0.7643    0.7643    0.5584    0.5584    0.7644
+
+  Columns 91 through 100
+
+    0.7644    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645
+    0.7644    0.5582    0.5582    0.7645    0.7645    0.5581    0.5581    0.7645    0.7645    0.5581
+
+  Column 101
+
+    0.5581
+    0.5581
+
+
+m =
+
+  Columns 1 through 10
+
+    0.3333    0.3333    0.6444    0.6444    0.6645    0.6645    0.6465    0.6465    0.6627    0.6627
+    0.3333    0.6444    0.6444    0.6645    0.6645    0.
