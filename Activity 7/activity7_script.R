@@ -1,3 +1,4 @@
+#### Load relevevant packages ####
 library(raster)
 library(sp)
 library(rgdal)
@@ -37,32 +38,6 @@ rgbS <- stack(rdatB4,rdatB3,rdatB2)
 #stack all raster data
 allbands <- stack(rdatB2,rdatB3,rdatB4,rdatB5,rdatB6,rdatB7, rdatB8,rdatB11, rdatB12,clouds)
 
-#view raster, maximum digigtal is around 20000 so set scale to that
-plotRGB(rgbS, scale=20000)
-
-#view raster, maximum digigtal is around 20000 so set scale to that
-plotRGB(rgbS, scale=20000, stretch="lin")
-
-#use mapview package
-#view rgb and set up a contrast stretch, exclude clouds with high values
-viewRGB(rgbS,r=1,g=2,b=3,maxpixels =  2297430, #view all pixels don' lower resolution
-        quantiles = c(0.00,0.995), #quantilesfor stretch. Cuts off high reflectance from clouds
-        homebutton=FALSE,
-        viewer.suppress=FALSE)#view in Rstudio
-
-#use mapview package
-#view rgb and set up a contrast stretch, exclude clouds with high values
-#and view all landcover types
-viewRGB(rgbS,r=1,g=2,b=3,maxpixels =  2297430,quantiles = c(0.00,0.995), homebutton=FALSE,
-        viewer.suppress=TRUE)+mapview(algae, color="grey25",col.regions="palegreen")
-+mapview(agri, color="grey25",col.regions="violet")
-+mapview(built, color="grey25",col.regions="darkgoldenrod3")
-+mapview(forest, color="grey25",col.regions="tan4")
-+mapview(water, color="grey25",col.regions="royalblue")
-+mapview(wetlands, color="grey25",col.regions="orangered2")
-
-par(mai=c(0.2,0.2,0.2,0.2))
-plot(allbands[[10]])
 
 #set clouds to NA
 allbandsCloud <- list()
@@ -75,9 +50,6 @@ allbandsCloudf <- stack(allbandsCloud[[1]],allbandsCloud[[2]],allbandsCloud[[3]]
             allbandsCloud[[4]],allbandsCloud[[5]],allbandsCloud[[6]],
             allbandsCloud[[7]],allbandsCloud[[8]],allbandsCloud[[9]])
 
-#view all layers
-plot(allbandsCloudf)
-
 
 ##### Answer 1 #####
 
@@ -86,6 +58,10 @@ plotRGB(allbandsCloudf,r=4, g=3, b=2,
         stretch="lin", 
         margins=TRUE,
         colNA="grey50")
+
+#### #####
+
+#### Machine learning: Random Forest and Neural Network Landcover classification ####
 
 #set seed so samples always the same
 set.seed(12153)
@@ -152,8 +128,6 @@ colnames(rasterEx) <- c("B2","B3","B4","B5","B6","B7","B8","B11","B12")
 
 #combine point information with raster information
 dataAll <- cbind(landExtract,rasterEx)
-#preview
-head(dataAll)
 
 trainD <- dataAll[dataAll$sampleType == "train",]
 validD <- dataAll[dataAll$sampleType == "valid",]
@@ -174,18 +148,14 @@ rf_model <- caret::train(x = trainD[,c(5:13)], #digital number data
                          metric="Accuracy", #assess by accuracy
                          trainControl = tc, #use parameter tuning method
                          tuneGrid = rf.grid) #parameter tuning grid
-#check output
-rf_model
 
 # Change name in raster stack to match training data
 names(allbandsCloudf) <- c("B2","B3","B4","B5","B6","B7","B8","B11","B12")
 # Apply the random forest model to the Sentinel-2 data
 rf_prediction <- raster::predict(allbandsCloudf, model=rf_model)
 #view predictions
-plot(rf_prediction)
+#plot(rf_prediction)
 
-#landcover class names
-landclass
 
 par(mai= c(0.2,1,0.5,0.2))
 #set up categorical colors
@@ -193,18 +163,6 @@ landclass$cols <-c("#a6d854","#8da0cb","#66c2a5",
                    "#fc8d62","#ffffb3","#ffd92f")
 #make plot and hide legend
 
-par(mai=c(0.15,0.15,0.15,0.15))
-plot(rf_prediction,
-     breaks=seq(0,6), 
-     col=landclass$cols ,
-     legend=FALSE, axes=FALSE)
-legend("bottomleft", paste(landclass$landcover[1:2]),
-       fill=landclass$cols[1:2] ,bty="n", cex=0.75)
-legend("bottom", paste(landclass$landcover[3:4]),
-       fill=landclass$cols[1:2] ,bty="n", cex=0.75)
-legend("bottomright", paste(landclass$landcover[5:6]),
-       fill=landclass$cols[1:2] ,bty="n", cex=0.75)
-title(main="Random Forest")
 #get validation data from raster by extracting 
 #cell values at the cell coordinates
 rf_Eval <- extract(rf_prediction, validD[,3:4])
@@ -215,10 +173,10 @@ rf_errorM <- confusionMatrix(as.factor(rf_Eval),as.factor(validD$landcID))
 colnames(rf_errorM$table) <- landclass$landcover
 rownames(rf_errorM$table) <- landclass$landcover
 #view the matrix
-rf_errorM$table
+# rf_errorM$table
 
 #look at the overall accuracy
-rf_errorM$overall
+# rf_errorM$overall
 
 
 #set up grid
@@ -234,6 +192,35 @@ nnet_model <- caret::train(x = trainD[,c(5:13)], y = as.factor(trainD$landcID),
 nnet_prediction <- raster::predict(allbandsCloudf, model=nnet_model)
 
 #make plot and hide legend
+
+#extract predictions
+nn_Eval = extract(nnet_prediction, validD[,3:4])
+#confusion matrix
+nn_errorM = confusionMatrix(as.factor(nn_Eval),as.factor(validD$landcID))
+colnames(nn_errorM$table) <- landclass$landcover
+rownames(nn_errorM$table) <- landclass$landcover
+#nn_errorM$table
+
+
+#### Answer 3 ####
+
+# Make Random Forest classification outcome map
+
+par(mai=c(0.15,0.15,0.15,0.15))
+plot(rf_prediction,
+     breaks=seq(0,6), 
+     col=landclass$cols ,
+     legend=FALSE, axes=FALSE)
+legend("bottomleft", paste(landclass$landcover[1:2]),
+       fill=landclass$cols[1:2] ,bty="n", cex=0.75)
+legend("bottom", paste(landclass$landcover[3:4]),
+       fill=landclass$cols[3:4] ,bty="n", cex=0.75)
+legend("bottomright", paste(landclass$landcover[5:6]),
+       fill=landclass$cols[5:6] ,bty="n", cex=0.75)
+mtext("Random Forest", side=3,cex=2, line=-5)
+
+# Make Neural Network classification outcome map
+
 par(mai=c(0.2,0.2,0.2,0.2))
 plot(nnet_prediction,
      breaks=seq(0,6), 
@@ -245,89 +232,41 @@ legend("bottom", paste(landclass$landcover[3:4]),
        fill=landclass$cols[3:4] ,bty="n",  cex=0.7)
 legend("bottomright", paste(landclass$landcover[5:6]),
        fill=landclass$cols[5:6] ,bty="n",  cex=0.7)
-title(main="Neural network")
-
-#extract predictions
-nn_Eval = extract(nnet_prediction, validD[,3:4])
-#confusion matrix
-nn_errorM = confusionMatrix(as.factor(nn_Eval),as.factor(validD$landcID))
-colnames(nn_errorM$table) <- landclass$landcover
-rownames(nn_errorM$table) <- landclass$landcover
-nn_errorM$table
-
-par(mfrow=c(2,1), mai=c(0,0,0,0))
-#random forest
-plot(rf_prediction,
-     breaks=seq(0,6), 
-     col=landclass$cols ,
-     legend=FALSE)
-#legend
-legend("bottomleft", paste(landclass$landcover),
-       fill=landclass$cols ,bty="n")
 #add title
-mtext("Random Forest", side=3,cex=2, line=-5)
-
-#neural network
-plot(nnet_prediction,
-     breaks=seq(0,6), 
-     col=landclass$cols ,
-     legend=FALSE, axes=FALSE)
-#add legend
-legend("bottomleft", paste(landclass$landcover),
-       fill=landclass$cols, bty="n")   
-#add title
-mtext("Neural network", side=3,cex=2, line=-5)
-
+mtext("Neural Network", side=3,cex=2, line=-5)
 
 #### Answer 4 ####
 
-cell_area= 20*20
+cell_area= 20*20 # area of each cell or pixel
 
 #cell count random forest
-cell_algal_count_rf<- freq(rf_prediction)[1,2]
-area_algal_rf<- cell_algal_count_rf*cell_area
+cell_algal_count_rf<- freq(rf_prediction)[1,2] # Number of cells classified under algal bloom
+area_algal_rf<- cell_algal_count_rf*cell_area # Area predicted under algal bloom by RF
 area_algal_rf
 
 #cell count neural net
-cell_algal_count_nnet<- freq(nnet_prediction)[1,2]
-area_algal_nnet<- cell_algal_count_nnet*cell_area
+cell_algal_count_nnet<- freq(nnet_prediction)[1,2] # Number of cells classified under algal bloom
+area_algal_nnet<- cell_algal_count_nnet*cell_area # Area predicted under algal bloom by Nnet
 area_algal_nnet
 
-diff_algal<- area_algal_rf-area_algal_nnet
+diff_algal<- area_algal_rf-area_algal_nnet # difference in area predictions
 diff_algal
+abs(diff_algal) #23063600
 
 #### Answer 5 ####
 
-
-rf_nnet_compare_cols <- ifelse(rf_nnet_compare@data@values==0,"green", "red")
-legend("topleft", c("<0.2","<0.3","<0.4", 
-                    "<0.5", "<0.6", ">=0.6"), fill=c("blue", "darkorchid1", "gray48", "gray0",
-                                                     "deeppink", "firebrick1" ), horiz=FALSE, cex=0.8)
-plot(rf_nnet_compare, col=paste(rf_nnet_compare_cols),add=T, border=FALSE)
-
-## Alternate
-
-rf_nnet_compare<- abs(rf_prediction-nnet_prediction)
+rf_nnet_compare<- abs(rf_prediction-nnet_prediction) # create a raster that shows whether RF and nnet
+                                                     # predictions agree or disagree
+par(mfrow=c(1,1), mai=c(0.2,0.2,0.2,0.2)) # set relevant plot margins
 plot(rf_nnet_compare,
-     breaks=seq(0,6), 
-     col=landclass$cols ,
-     legend=FALSE, axes=FALSE)
-#add legend
-legend("bottomleft", c("0 (Predictions same)", "1"),
-       fill=landclass$cols[1:2], bty="n", cex=0.7) 
-legend("bottom", paste(seq(2,3)),
-       fill=landclass$cols[3:4], bty="n", cex=0.7) 
-legend("bottomright", paste(seq(4,5)),
-       fill=landclass$cols[5:6], bty="n", cex=0.7) 
-
-
-par(mfrow=c(1,1), mai=c(0.2,0.2,0.2,0.2))
-rf_nnet_compare@data@values<- ifelse(rf_nnet_compare@data@values==0, 0, 1)
-plot(rf_nnet_compare,
+     breaks= c(-0.5, 0.5, 8), # Set break to plot all similarly classified area white and
+                              # areas with differences in classifications green
+     col= c("white","#a6d854"),
      legend=FALSE, axes=FALSE)
 #add legend
 legend("bottomleft", c("Predictions agree\n(0)", "Predictions disagree\n(>0)"),
        fill=c("white","#a6d854"), bty="n", horiz=T, cex=0.75)
+mtext("Comparing Random Forest and Neural Network Predictions", side=3,cex=2, line=-5) # Set title
 
 
 #### Answer 6 ####
@@ -337,11 +276,15 @@ legend("bottomleft", c("Predictions agree\n(0)", "Predictions disagree\n(>0)"),
 # Producer's accuracy for algal blooms
 correct_algal<- rf_errorM$table[1,1]
 total_algal<- sum(rf_errorM$table[,1])
-pa_algal<- (correct_algal/total_algal)*100
+
+# producer's accuracy= (correct predictions/ total references)*100
+pa_algal<- (correct_algal/total_algal)*100 
 
 # User's accuracy for algal blooms
 correct_algalu<- rf_errorM$table[1,1]
 total_algalu<- sum(rf_errorM$table[1,])
+
+# user's accuracy= (correct predictions/ total predictions)*100
 ua_algal<- (correct_algalu/total_algalu)*100
 
 # Producer's accuracy for agriculture
@@ -376,3 +319,42 @@ pa_agrinn<- (correct_agrinn/total_agrinn)*100
 correct_agriunn<- nn_errorM$table[3,3]
 total_agriunn<- sum(nn_errorM$table[3,])
 ua_agrinn<- (correct_agriunn/total_agriunn)*100
+
+#### Answer 8 ####
+
+# Calculate producer's and user's accuracy for all landclasses for both methods
+
+rf_pa<- c() # Producer's accuarcy for RF
+rf_ua<- c() # User's accuracy for RF
+nn_pa<- c() # Producer's accuracy for NN
+nn_ua<- c() # User's accuracy for NN
+
+
+# Calculate using relevant formulae for Producer's accuracy and user's accuracy
+
+# User's accuracy= (correct predictions/ total predictions)*100
+for (i in 1:6){ 
+  correct_algalrf<- rf_errorM$table[i,i]
+  total_algalrf<- sum(rf_errorM$table[,i])
+  pa_algalrf<- (correct_algalrf/total_algalrf)*100
+  
+  rf_pa<- c(rf_pa, pa_algalrf)
+  
+  correct_algalnn<- nn_errorM$table[i,i]
+  total_algalnn<- sum(nn_errorM$table[,i])
+  pa_algalnn<- (correct_algalnn/total_algalnn)*100
+  
+  nn_pa<- c(nn_pa, pa_algalnn)
+  
+  correct_algalrf<- rf_errorM$table[i,i]
+  total_algalrf<- sum(rf_errorM$table[i,])
+  ua_algalrf<- (correct_algalrf/total_algalrf)*100
+  
+  rf_ua<- c(rf_ua, ua_algalrf)
+  
+  correct_algalunn<- nn_errorM$table[i,i]
+  total_algalunn<- sum(nn_errorM$table[i,])
+  ua_algalnn<- (correct_algalunn/total_algalunn)*100
+  
+  nn_ua<- c(nn_ua, ua_algalnn)
+}
